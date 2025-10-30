@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Hotel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="Hotels.xsd">
+  <!--  Error #1: Root element should be <Hotels>, not <Hotel> -->
+
+  <Hotel _NearestAirport="Sky Harbor">
+    <Name>Hilton Garden Inn</Name>
+    <City>Phoenix</City>
+    <Address>400 N 3rd St, Phoenix, AZ</Address>
+    <Phone>6021234567</Phone>
+    <PricePerNight>159</PricePerNight>
+  </Hotel>
+
+  <Hotel>
+    <!--  Error #2: Missing required attribute (_NearestAirport) -->
+    <Name>Marriott Downtown</Name>
+    <City>Phoenix</City>
+    <Address>100 N 1st St</Address>
+    <Phone>6027654321</Phone>
+    <PricePerNight>199</PricePerNight>
+  </Hotel>
+
+  <Hotel _NearestAirport="Sky Harbor">
+    <Name>Westin Phoenix Downtown</Name>
+    <City>Phoenix</City>
+    <!--  Error #3: Missing <Phone> tag -->
+    <Address>333 N Central Ave</Address>
+    <PricePerNight>179</PricePerNight>
+  </Hotel>
+
+  <Hotel _NearestAirport="Sky Harbor">
+    <Name>Holiday Inn Express</Name>
+    <City>Phoenix</City>
+    <Address>620 N 6th St</Address>
+    <Phone>6025559999</Phone>
+    <!--  Error #4: Invalid price format -->
+    <PricePerNight>one hundred eighty</PricePerNight>
+  </Hotel>
+
+  <Hotel _NearestAirport="Sky Harbor">
+    <!--  Error #5: Two <Name> tags -->
+    <Name>Hyatt Regency</Name>
+    <Name>Hyatt Downtown</Name>
+    <City>Phoenix</City>
+    <Address>122 N 2nd St</Address>
+    <Phone>6027778888</Phone>
+    <PricePerNight>189</PricePerNight>
+  </Hotel>
+</Hotel>
